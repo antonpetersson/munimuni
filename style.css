@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.content{
+    display: grid;
+    grid-template-columns: [line-1] 5vw [line-2] 90vw [line-3] 5vw;
+    grid-template-rows: [header-start] 10vh  [header-end menu-start] 10vh [menu-end main-start] 70vh [main-end footer-start] 10vh [footer-end];
+    grid-template-areas: 
+    "header header header"
+    "menu menu menu"
+    ". main ."
+    "footer footer footer"
+
+}
+.header{
+    grid-area: header;
+    background-color: lightblue;
+}
+.menu{
+    grid-area: menu;
+    background-color: lightcoral;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.menuList{  
+    list-style: none;
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main{
+    grid-area: main;
+    background-color: lightgreen;
+}
+.footer{
+    grid-area: footer;
+    background-color: lightslategray;

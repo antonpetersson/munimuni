@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "prodName": "Epiphone Les Paul Standard",
+        "prodDesc": "Elgitarr med kropp av mahogny och AAA-flammigt lönntopp, mahognyhals med greppbräda av rosewood och två ProBucker pickups.",
+        "prodPrice": 6999,
+        "huvudKat": 1,
+        "underKat": 1
+    }
+]

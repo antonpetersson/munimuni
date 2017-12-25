@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "subCategory": "El Gitarr",
+        "mainCategory": 1
+        
+    },{
+        "id": 2,
+        "subCategory": "El Bas",
+        "mainCategory": 2
+    },{
+        "id": 3,
+        "subCategory": "Tillbehör",
+        "mainCategory": 1
+    },{
+        "id": 4,
+        "subCategory": "Piano",
+        "mainCategory": 3
+    },{
+        "id": 5,
+        "subCategory": "Synth",
+        "mainCategory": 3
+    },{
+        "id": 6,
+        "subCategory": "Klassisk Gitarr",
+        "mainCategory": 1
+    },{
+        "id": 7,
+        "subCategory": "Strängar",
+        "mainCategory": 1
+    },{
+        "id": 8,
+        "subCategory": "Akustisk Bas",
+        "mainCategory": 2
+    },{
+        "id": 9,
+        "subCategory": "Dragspel",
+        "mainCategory": 3
+    },{
+        "id": 10,
+        "subCategory": "Förstärkare",
+        "mainCategory": 1
+    },{
+        "id": 11,
+        "subCategory": "USB Keyboard",
+        "mainCategory": 3
+    },{
+        "id": 12,
+        "subCategory": "Strängar",
+        "mainCategory": 2
+    },{
+        "id": 13,
+        "subCategory": "Förstärkare",
+        "mainCategory": 2
+    },{
+        "id": 14,
+        "subCategory": "Begagnat",
+        "mainCategory": 1
+    },{
+        "id": 15,
+        "subCategory": "Tillbehör",
+        "mainCategory": 2
+    },{
+        "id": 15,
+        "subCategory": "Trumsett",
+        "mainCategory": 4
+    },{
+        "id": 15,
+        "subCategory": "Digitaltrummor",
+        "mainCategory": 4
+    },{
+        "id": 15,
+        "subCategory": "Slagverk",
+        "mainCategory": 4
+    }
+]
