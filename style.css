@@ -6,10 +6,11 @@ body{
 .content{
     display: grid;
     grid-template-columns: [line-1] 5vw [line-2] 90vw [line-3] 5vw;
-    grid-template-rows: [header-start] 10vh  [header-end menu-start] 10vh [menu-end main-start] 70vh [main-end footer-start] 10vh [footer-end];
+    grid-template-rows: [header-start] 10vh  [header-end mainMenu-start] 5vh [mainMenu-end subMenu-start] 5vh [subMenu-end main-start] 70vh [main-end footer-start] 10vh [footer-end];
     grid-template-areas: 
     "header header header"
-    "menu menu menu"
+    "mainMenu mainMenu mainMenu"
+    "subMenu subMenu subMenu"
     ". main ."
     "footer footer footer"
 
@@ -18,13 +19,13 @@ body{
     grid-area: header;
     background-color: lightblue;
 }
-.menu{
-    grid-area: menu;
+.mainMenu{
+    grid-area: mainMenu;
     background-color: lightcoral;
     display: flex;
     flex-flow: row nowrap;
 }
-.menuList{  
+.mainMenuList{  
     list-style: none;
     width: 100vw;
     display: flex;
@@ -32,6 +33,22 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+.subMenu{
+    grid-area: subMenu;
+    background-color: lightsalmon;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.subMenuList{  
+    list-style: none;
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
 .main{
     grid-area: main;
     background-color: lightgreen;

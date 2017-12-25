@@ -1,76 +1,76 @@
 [
     {
         "id": 1,
-        "subCategory": "El Gitarr",
+        "subCategory": "Roundies",
         "mainCategory": 1
         
     },{
         "id": 2,
-        "subCategory": "El Bas",
-        "mainCategory": 2
+        "subCategory": "Hamam handdukar",
+        "mainCategory": 1
     },{
         "id": 3,
-        "subCategory": "Tillbehör",
+        "subCategory": "Filtar-sub3",
         "mainCategory": 1
     },{
         "id": 4,
-        "subCategory": "Piano",
-        "mainCategory": 3
+        "subCategory": "Filtar-sub4",
+        "mainCategory": 1
     },{
         "id": 5,
-        "subCategory": "Synth",
-        "mainCategory": 3
+        "subCategory": "Interiör-sub1",
+        "mainCategory": 2
     },{
         "id": 6,
-        "subCategory": "Klassisk Gitarr",
-        "mainCategory": 1
+        "subCategory": "Interiör-sub2",
+        "mainCategory": 2
     },{
         "id": 7,
-        "subCategory": "Strängar",
-        "mainCategory": 1
+        "subCategory": "Interiör-sub3",
+        "mainCategory": 2
     },{
         "id": 8,
-        "subCategory": "Akustisk Bas",
+        "subCategory": "Interiör-sub4",
         "mainCategory": 2
     },{
         "id": 9,
-        "subCategory": "Dragspel",
+        "subCategory": "Sängkläder-sub1",
         "mainCategory": 3
     },{
         "id": 10,
-        "subCategory": "Förstärkare",
-        "mainCategory": 1
+        "subCategory": "Sängkläder-sub2",
+        "mainCategory": 3
     },{
         "id": 11,
-        "subCategory": "USB Keyboard",
+        "subCategory": "Sängkläder-sub3",
         "mainCategory": 3
     },{
         "id": 12,
-        "subCategory": "Strängar",
-        "mainCategory": 2
+        "subCategory": "Sängkläder-sub4",
+        "mainCategory": 3
     },{
         "id": 13,
-        "subCategory": "Förstärkare",
-        "mainCategory": 2
+        "subCategory": "Accessoarer-sub1",
+        "mainCategory": 4
     },{
         "id": 14,
-        "subCategory": "Begagnat",
-        "mainCategory": 1
-    },{
-        "id": 15,
-        "subCategory": "Tillbehör",
-        "mainCategory": 2
-    },{
-        "id": 15,
-        "subCategory": "Trumsett",
+        "subCategory": "Accessoarer-sub2",
         "mainCategory": 4
     },{
         "id": 15,
-        "subCategory": "Digitaltrummor",
+        "subCategory": "Accessoarer-sub3",
         "mainCategory": 4
     },{
-        "id": 15,
-        "subCategory": "Slagverk",
+        "id": 16,
+        "subCategory": "Accessoarer-sub4",
+        "mainCategory": 4
+    },{
+        "id": 17,
+        "subCategory": "Accessoarer-sub5",
+        "mainCategory": 4
+    },{
+        "id": 18,
+        "subCategory": "Accessoarer-sub6",
         "mainCategory": 4
     }
 ]
