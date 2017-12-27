@@ -2,25 +2,31 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: antiquewhite;
 }
 .content{
-    display: grid;
-    grid-template-columns: [line-1] 5vw [line-2] 90vw [line-3] 5vw;
-    grid-template-rows: [header-start] 10vh  [header-end mainMenu-start] 5vh [mainMenu-end subMenu-start] 5vh [subMenu-end main-start] 70vh [main-end footer-start] 10vh [footer-end];
-    grid-template-areas: 
-    "header header header"
-    "mainMenu mainMenu mainMenu"
-    "subMenu subMenu subMenu"
-    ". main ."
-    "footer footer footer"
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100vw;
+                        /*display: grid;
+                        grid-template-columns: [line-1] auto [line-2] 1600px [line-3] auto;
+                        grid-template-rows: [header-start] 100px  [header-end mainMenu-start] 50px [mainMenu-end subMenu-start] 50px [subMenu-end main-start] 1000px [main-end footer-start] 150px [footer-end];
+                        grid-template-areas: 
+                        "header header header"
+                        "mainMenu mainMenu mainMenu"
+                        "subMenu subMenu subMenu"
+                        ". main ."
+                        "footer footer footer"*/
 
 }
 .header{
-    grid-area: header;
+    height: 100px;
     background-color: lightblue;
+    width: 100vw;
 }
 .mainMenu{
-    grid-area: mainMenu;
+    height: 40px;
     background-color: lightcoral;
     display: flex;
     flex-flow: row nowrap;
@@ -34,7 +40,7 @@ body{
     align-items: center;
 }
 .subMenu{
-    grid-area: subMenu;
+    height: 40px;
     background-color: lightsalmon;
     display: flex;
     flex-flow: row nowrap;
@@ -50,9 +56,24 @@ body{
 
 
 .main{
-    grid-area: main;
+    margin-top: 50px;
+    width: 1200px;
+    height: 1000px;
     background-color: lightgreen;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.productCard{
+    background-color: white;
+    width: 280px;
+    height: 280px;
+    border: 1px solid;
+    margin-bottom: 25px;
 }
 .footer{
-    grid-area: footer;
+    width: 100vw;
+    height: 150px;
     background-color: lightslategray;

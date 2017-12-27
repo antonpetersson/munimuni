@@ -2,52 +2,28 @@
     {
         "id": 1,
         "prodName": "Isa",
-        "prodDesc": "BESKRIVNING
-        Den handvävda filten ISA har ett elefant-inspirerat mönster i svart-vita toner med vita fransar. Den är tillverkad av 100% bomull och har
-        en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa
-        material.
-        ISA passar perfekt som strandfilt,
-        picknickfilt eller till sommarkonserten.
-        ",
+        "prodDesc": "Den handvävda filten ISA har ett elefant-inspirerat mönster i svart-vita toner med vita fransar. Den är tillverkad av 100% bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa material. ISA passar perfekt som strandfilt, picknickfilt eller till sommarkonserten.",
         "prodPrice": 349,
         "mainCategory": 1,
         "subCategory": 1
     },{
         "id": 2,
         "prodName": "Dalawa",
-        "prodDesc": "BESKRIVNING
-        Den handvävda filten DALAWA har ett mandala-inspirerat mönster i blå-turkosa toner med vita pom-poms. Den är tillverkad av 100%
-        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
-        högkvalitativa material.
-        DALAWA passar
-        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
-        ",
+        "prodDesc": "Den handvävda filten DALAWA har ett mandala-inspirerat mönster i blå-turkosa toner med vita pom-poms. Den är tillverkad av 100% bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa material. DALAWA passar perfekt som strandfilt, picknickfilt eller till sommarkonserten.",
         "prodPrice": 379,
         "mainCategory": 1,
         "subCategory": 1
     },{
         "id": 3,
         "prodName": "Tatlo",
-        "prodDesc": "BESKRIVNING
-        Den handvävda filten TATLO har ett mandala-inspirerat mönster i blå-orange toner. Den är tillverkad av 100%
-        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
-        högkvalitativa material.
-        TATLO passar
-        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
-        ",
+        "prodDesc": "Den handvävda filten TATLO har ett mandala-inspirerat mönster i blå-orange toner. Den är tillverkad av 100% bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa material. TATLO passar perfekt som strandfilt, picknickfilt eller till sommarkonserten.",
         "prodPrice": 349,
         "mainCategory": 1,
         "subCategory": 1
     },{
         "id": 4,
         "prodName": "Apat",
-        "prodDesc": "BESKRIVNING
-        Den handvävda filten APAT har ett mandala inspirerat mönster i guld-vita toner med vita fransar. Den är tillverkad av 100%
-        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
-        högkvalitativa material.
-        TATLO passar
-        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
-        ",
+        "prodDesc": "Den handvävda filten APAT har ett mandala inspirerat mönster i guld-vita toner med vita fransar. Den är tillverkad av 100% bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa material. TATLO passar perfekt som strandfilt, picknickfilt eller till sommarkonserten.",
         "prodPrice": 349,
         "mainCategory": 1,
         "subCategory": 1
