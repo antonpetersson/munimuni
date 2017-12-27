@@ -1,10 +1,175 @@
 [
     {
         "id": 1,
-        "prodName": "Epiphone Les Paul Standard",
-        "prodDesc": "Elgitarr med kropp av mahogny och AAA-flammigt lönntopp, mahognyhals med greppbräda av rosewood och två ProBucker pickups.",
-        "prodPrice": 6999,
-        "huvudKat": 1,
-        "underKat": 1
+        "prodName": "Isa",
+        "prodDesc": "BESKRIVNING
+        Den handvävda filten ISA har ett elefant-inspirerat mönster i svart-vita toner med vita fransar. Den är tillverkad av 100% bomull och har
+        en storlek på 180 cm. Tillverkad med stor omsorg för detalj av högkvalitativa
+        material.
+        ISA passar perfekt som strandfilt,
+        picknickfilt eller till sommarkonserten.
+        ",
+        "prodPrice": 349,
+        "mainCategory": 1,
+        "subCategory": 1
+    },{
+        "id": 2,
+        "prodName": "Dalawa",
+        "prodDesc": "BESKRIVNING
+        Den handvävda filten DALAWA har ett mandala-inspirerat mönster i blå-turkosa toner med vita pom-poms. Den är tillverkad av 100%
+        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
+        högkvalitativa material.
+        DALAWA passar
+        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
+        ",
+        "prodPrice": 379,
+        "mainCategory": 1,
+        "subCategory": 1
+    },{
+        "id": 3,
+        "prodName": "Tatlo",
+        "prodDesc": "BESKRIVNING
+        Den handvävda filten TATLO har ett mandala-inspirerat mönster i blå-orange toner. Den är tillverkad av 100%
+        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
+        högkvalitativa material.
+        TATLO passar
+        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
+        ",
+        "prodPrice": 349,
+        "mainCategory": 1,
+        "subCategory": 1
+    },{
+        "id": 4,
+        "prodName": "Apat",
+        "prodDesc": "BESKRIVNING
+        Den handvävda filten APAT har ett mandala inspirerat mönster i guld-vita toner med vita fransar. Den är tillverkad av 100%
+        bomull och har en storlek på 180 cm. Tillverkad med stor omsorg för detalj av
+        högkvalitativa material.
+        TATLO passar
+        perfekt som strandfilt, picknickfilt eller till sommarkonserten.
+        ",
+        "prodPrice": 349,
+        "mainCategory": 1,
+        "subCategory": 1
+    },{
+        "id": 5,
+        "prodName": "Test5",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 1,
+        "subCategory": 2
+    },{
+        "id": 6,
+        "prodName": "Test6",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 1,
+        "subCategory": 3
+    },{
+        "id": 7,
+        "prodName": "Test7",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 1,
+        "subCategory": 4
+    },{
+        "id": 8,
+        "prodName": "Test8",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 2,
+        "subCategory": 1
+    },{
+        "id": 9,
+        "prodName": "Test9",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 2,
+        "subCategory": 2
+    },{
+        "id": 10,
+        "prodName": "Test10",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 2,
+        "subCategory": 3
+    },{
+        "id": 11,
+        "prodName": "Test11",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 2,
+        "subCategory": 4
+    },{
+        "id": 12,
+        "prodName": "Test12",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 3,
+        "subCategory": 1
+    },{
+        "id": 13,
+        "prodName": "Test13",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 3,
+        "subCategory": 2
+    },{
+        "id": 14,
+        "prodName": "Test14",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 3,
+        "subCategory": 3
+    },{
+        "id": 15,
+        "prodName": "Test15",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 3,
+        "subCategory": 4
+    },{
+        "id": 16,
+        "prodName": "Test16",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 1
+    },{
+        "id": 17,
+        "prodName": "Test17",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 2
+    },{
+        "id": 18,
+        "prodName": "Test18",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 3
+    },{
+        "id": 19,
+        "prodName": "Test19",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 4
+    },{
+        "id": 20,
+        "prodName": "Test20",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 5
+    },{
+        "id": 21,
+        "prodName": "Test21",
+        "prodDesc": "test",
+        "prodPrice": 999,
+        "mainCategory": 4,
+        "subCategory": 6
     }
+        
 ]
