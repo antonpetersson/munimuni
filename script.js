@@ -53,7 +53,7 @@ function printMainCat(){
         printSubCat = function(i){      
             $(".subMenuList").html("");    
             for(var index = 0; index < subCatList.length; index++){
-                var subCatName = "<li><a href='#'>" + subCatList[index].subCategory + "</a></li>";
+                var subCatName = "<li onclick='printProductList(" + subCatList[index].id + ")'><a href='#'>" + subCatList[index].subCategory + "</a></li>";
 
                 if (subCatList[index].mainCategory == i+1){
                     $(".subMenuList").append(subCatName);
@@ -62,6 +62,7 @@ function printMainCat(){
         }
         printProductList = function(i){
             $(".main").html("");
+            
             for(var index = 0; index < productList.length; index++){
                 
                 var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
@@ -72,7 +73,10 @@ function printMainCat(){
                 if (productList[index].mainCategory == i+1){
                     $(".main").append(productCard);
                 }
-               
+                else if (productList[index].subCategory == i ){
+                    $(".main").append(productCard);
+                }
+                
             }
         }
 
