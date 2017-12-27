@@ -2,13 +2,24 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #FFFFF0;
+    background-color: #FFFFFF;
 }
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+    
+}
+a:hover{
+    text-decoration: none;
+    color: #8c8b8b;
+}
+
 .content{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     width: 100vw;
+
                         /*display: grid;
                         grid-template-columns: [line-1] auto [line-2] 1600px [line-3] auto;
                         grid-template-rows: [header-start] 100px  [header-end mainMenu-start] 50px [mainMenu-end subMenu-start] 50px [subMenu-end main-start] 1000px [main-end footer-start] 150px [footer-end];
@@ -18,16 +29,16 @@ body{
                         "subMenu subMenu subMenu"
                         ". main ."
                         "footer footer footer"*/
-
 }
 .header{
+    text-align: center;
     height: 100px;
-    background-color: #FFFFF0;
+    background-color: #FFFFFF;
     width: 100vw;
 }
 .mainMenu{
     height: 40px;
-    background-color: lightcoral;
+
     display: flex;
     flex-flow: row nowrap;
 }
@@ -39,9 +50,20 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+.menuHR{
+    border: 0; 
+    height: 1px; 
+    width: 90vw;
+    margin: 0px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+
+}
 .subMenu{
     height: 40px;
-    background-color: lightsalmon;
+    
     display: flex;
     flex-flow: row nowrap;
 }
@@ -59,7 +81,7 @@ body{
     margin: 50px 0px;
     width: 1200px;
     height: 1000px;
-    background-color: #FFFFF0;
+    background-color: #FFFFFF;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start; 
@@ -67,7 +89,7 @@ body{
     align-content: flex-start;
 }
 .productCard{
-    background-color: #FFFFF0;
+    background-color: #FFFFFF;
     width: 280px;
     height: 280px;
     border: 1px solid;
