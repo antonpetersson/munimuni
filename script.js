@@ -66,9 +66,10 @@ function printMainCat(){
             for(var index = 0; index < productList.length; index++){
                 
                 var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
-                var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>"
+                var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>";
+                var productCardImage = "<img class='productCardImg' src='img/products/" + productList[index].prodImg + "'>";
 
-                var productCard = "<div class='productCard'>" + productCardName + productCardPrice + "</div>";
+                var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
 
                 if (productList[index].mainCategory == i+1){
                     $(".main").append(productCard);

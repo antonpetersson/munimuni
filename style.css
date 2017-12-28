@@ -3,6 +3,8 @@ body{
     padding: 0;
     overflow-x: hidden;
     background-color: #FFFFFF;
+    font-family: 'Quicksand', sans-serif;
+    
 }
 a:link, a:visited {
     text-decoration: none;
@@ -12,6 +14,14 @@ a:link, a:visited {
 a:hover{
     text-decoration: none;
     color: #8c8b8b;
+}
+h2{
+    margin: 5px;
+    font-size: 25px;
+    font-family: 'Philosopher', sans-serif;
+}
+p{
+    margin: 0px;    
 }
 
 .content{
@@ -32,7 +42,7 @@ a:hover{
 }
 .header{
     text-align: center;
-    height: 100px;
+    height: 150px;
     background-color: #FFFFFF;
     width: 100vw;
 }
@@ -89,12 +99,16 @@ a:hover{
     align-content: flex-start;
 }
 .productCard{
-    background-color: #FFFFFF;
+    
+    width: 282px;
+    height: 360px;
+    text-align: center;
+    margin: 12px 9px 12px 9px;
+}
+.productCardImg{
     width: 280px;
     height: 280px;
     border: 1px solid;
-    margin: 12px 9px 12px 9px;
-    /*margin-bottom: 25px;*/
 }
 .footer{
     width: 100vw;
