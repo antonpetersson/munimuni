@@ -20,8 +20,18 @@ h2{
     font-size: 25px;
     font-family: 'Philosopher', sans-serif;
 }
+h3{
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+}
 p{
     margin: 0px;    
+}
+ul{
+    list-style: none;
+    padding: 5px;
+
 }
 button{
     font-family: 'Quicksand', sans-serif;
@@ -36,16 +46,6 @@ button{
     flex-flow: row wrap;
     justify-content: center;
     width: 100vw;
-
-                        /*display: grid;
-                        grid-template-columns: [line-1] auto [line-2] 1600px [line-3] auto;
-                        grid-template-rows: [header-start] 100px  [header-end mainMenu-start] 50px [mainMenu-end subMenu-start] 50px [subMenu-end main-start] 1000px [main-end footer-start] 150px [footer-end];
-                        grid-template-areas: 
-                        "header header header"
-                        "mainMenu mainMenu mainMenu"
-                        "subMenu subMenu subMenu"
-                        ". main ."
-                        "footer footer footer"*/
 }
 .header{
     text-align: center;
@@ -60,7 +60,6 @@ button{
     flex-flow: row nowrap;
 }
 .mainMenuList{  
-    list-style: none;
     width: 100vw;
     display: flex;
     flex-flow: row nowrap;
@@ -84,7 +83,6 @@ button{
     flex-flow: row nowrap;
 }
 .subMenuList{  
-    list-style: none;
     width: 100vw;
     display: flex;
     flex-flow: row nowrap;
@@ -140,10 +138,32 @@ button{
     background-image: -ms-linear-gradient(left, #8c8b8b, #8c8b8b, #f0f0f0);
     background-image: -o-linear-gradient(left, #8c8b8b, #8c8b8b, #f0f0f0); 
 }
-.addToCartButton{
+.cartButton{
     height: 40px;
     width: 200px;
     margin: 20px 0px;
+}
+.cartList{
+    width: 560px;
+    margin-right: 80px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; 
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.cartSummary{
+    padding-top: 16px;
+    width: 560px;
+}
+.cartListProdName{
+    width: 300px; 
+}
+.cartListRemove a{
+    color: #8c8b8b;
+}
+.cartListRemove a:hover{
+    color: black;
 }
 .footer{
     width: 100vw;
