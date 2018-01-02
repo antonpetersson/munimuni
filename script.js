@@ -67,7 +67,7 @@ function printMainCat(){
                 
                 var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
                 var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>";
-                var productCardImage = "<img class='productCardImg' src='img/products/" + productList[index].prodImg + "'>";
+                var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[index].id + ")' src='img/products/" + productList[index].prodImg + "'>";
 
                 var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
 
@@ -79,6 +79,26 @@ function printMainCat(){
                 }
                 
             }
+        }
+
+        showProduct = function(i){
+            $(".main").html("");
+            
+            for(var index = 0; index < productList.length; index++){
+                var productName = "<h2>" + productList[index].prodName  + "</h2>";
+                var productPrice = "<p>" + productList[index].prodPrice + " kr</p>";
+                var productImage = "<img class='productImg' onclick='showProduct(" + productList[index].id + ")' src='img/products/" + productList[index].prodImg + "'>";
+                var productDescription = "<p>" + productList[index].prodDesc + "</p>";
+                var addToCartButton = "<button class='addToCartButton'>Lägg i kundvagn</button>";
+
+                var productContainer = "<div class='productContainer'>" + productName + "<hr class='productHR'>" + productPrice + addToCartButton + productDescription + "</div>";
+
+                if (productList[index].id == i){
+                    $(".main").append(productImage);
+                    $(".main").append(productContainer);
+                }
+            }
+
         }
 
 
