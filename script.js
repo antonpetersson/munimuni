@@ -94,11 +94,11 @@ function printMainCat(){
             var productDescription = "<p>" + productList[index].prodDesc + "</p>";
             var cartButton = "<button class='cartButton' onclick='addToCart(" + productList[index].id + ")'>Lägg i kundvagn</button>";
 
-            var productContainer = "<div class='productContainer'>" + productName + "<hr class='productHR'>" + productPrice + cartButton + productDescription + "</div>";
-
+            var productTitle = "<div class='productTitle'>" + productName + "<hr class='productHR'>" + productPrice + "</div>"
+            var productContainer = "<div class='productContainer'>" + cartButton + productDescription + "</div>";
+            var productPage = "<div class='productPage'>" + productImage + productTitle + productContainer + "</div>";
             if (productList[index].id == i){
-                $(".main").append(productImage);
-                $(".main").append(productContainer);
+                $(".main").append(productPage);
             }
         }
     }
@@ -114,7 +114,15 @@ function printMainCat(){
     }
 
     showCart = function(){
-        $(".main").html("<h2>Kundvagn</h2><hr class='productHR'>");
+        $(".main").html("<div class='cartTitle'><h2>Kundvagn</h2></div><hr class='productHR'>");
+
+        var priceTotal = 55;
+        for(var i = 0; i < shoppingCart.length; i++) {
+            priceTotal += shoppingCart[i].prodPrice;
+        }
+        $(".cartTitle").append("<h3>Totalpris: " + priceTotal + " kr</h3>");
+
+
 
         var json_str = JSON.stringify(shoppingCart);
         localStorage.shoppingCart = json_str; 
@@ -132,21 +140,17 @@ function printMainCat(){
             cartListRemove += "<li><a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a></li>";
         }
 
-        var priceTotal = 55;
-        for(var i = 0; i < shoppingCart.length; i++) {
-            priceTotal += shoppingCart[i].prodPrice;
-        }
-
-        cartListProdName += "<li>Frakt</li></ul>"
-        cartListProdPrice += "<li>55 kr</li></ul>"
-        cartListRemove += "</ul>"
+        cartListProdName += "<li>Frakt</li></ul>";
+        cartListProdPrice += "<li>55 kr</li></ul>";
+        cartListRemove += "</ul>";
+       
         
     
         $(".main").append("<div class='cartList'></div><div class='cartSummary'></div>");
         $(".cartList").append(cartListProdName + cartListProdPrice + cartListRemove);
 
         var checkOutButton = "<button class='cartButton' onclick='checkOut()'>Gå till kassan</button>";
-        $(".cartSummary").append("<h3>Totalpris: " + priceTotal + " kr </br>" + checkOutButton);
+        $(".cartSummary").append(checkOutButton);
 
     }
 
