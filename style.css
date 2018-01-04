@@ -258,6 +258,7 @@ button{
     }
     .mainMenuList{  
        // width: 900px;
+
     }
     .subMenuList{  
        // width: 900px;
@@ -303,6 +304,9 @@ button{
     }
     .cartSummary{
         width: 260px;
+    }
+    .cartButton{
+        margin: 20px 10px;
     }
 
 }
