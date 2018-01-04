@@ -51,7 +51,15 @@ button{
     text-align: center;
     height: 150px;
     background-color: #FFFFFF;
-    width: 100vw;
+    width: 1200px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: url('img/logo.png');
+    background-size: 457px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .mainMenu{
     height: 40px;
@@ -65,6 +73,18 @@ button{
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
+}
+.cartLink{
+    width: 64px;
+    height: 64px;
+    background: url('img/cart.png');
+    margin-bottom: 20px;
+}
+.cartCounter{
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    margin-top: 26px;
 }
 .menuHR{
     border: 0; 
@@ -89,8 +109,6 @@ button{
     justify-content: space-evenly;
     align-items: center;
 }
-
-
 .main{
     margin: 50px 0px;
     width: 1200px;
@@ -169,3 +187,4 @@ button{
     width: 100vw;
     height: 150px;
     background-color: lightslategray;
+}
