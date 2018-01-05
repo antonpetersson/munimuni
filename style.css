@@ -63,6 +63,28 @@ button{
     background-repeat: no-repeat;
     background-position: center;
 }
+.cartLink{
+    width: 64px;
+    height: 64px;
+    background: url('img/cart.png');
+    background-size: 64px;
+    margin-bottom: 20px;
+}
+.cartCounter{
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    margin-top: 26px;
+}
+.mobileMenuButton{
+    display: none;
+}
+.fa-bars{
+    color: #4d4d4d;
+}
+.fa-bars:hover{
+    color: #8c8b8b;
+}
 .mainMenu{
     height: 40px;
     display: flex;
@@ -74,18 +96,6 @@ button{
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
-}
-.cartLink{
-    width: 64px;
-    height: 64px;
-    background: url('img/cart.png');
-    margin-bottom: 20px;
-}
-.cartCounter{
-    font-weight: 600;
-    font-size: 18px;
-    color: white;
-    margin-top: 26px;
 }
 .menuHR{
     border: 0; 
@@ -254,17 +264,60 @@ button{
 }
 @media (max-width: 899px) {
     .header{
-       // width: 760px;
+        order: -1;
+        width: 90vw;
+        height: 20vw;
+        align-items: center;
+        background-size: 60vw;
+        background-position-x: center;
+        justify-content: space-between;
+    }
+    .cartLink{
+        width: 15vw;
+        height: 15vw;
+        background-size: 15vw;
+        margin-bottom: -3vw;   
+        margin-right: 0.5vw;
+    }
+    .cartCounter{
+        font-size: 5vw;
+        margin-top: 5.7vw;
+    }
+    .mobileMenuButton{
+        display:inline-block;
+        margin-bottom: -4.5vw;   
+        margin-left: 2.5vw;
+        font-size: 3vw;
+    }
+    .menuHR{
+        order: -1
+    }
+    .mainMenu{
+        height: 100%;
+        width: 40vw;
+        flex-flow: column nowrap;
+        display: none;
     }
     .mainMenuList{  
-       // width: 900px;
-
+       width: 40vw;
+       flex-flow: column nowrap;
+       align-items: flex-start;
     }
+    
+.subMenu{
+    height: 100%;
+    width: 40vw;
+    flex-flow: column nowrap;
+    display: none;
+}
     .subMenuList{  
-       // width: 900px;
+        width: 40vw;
+        flex-flow: column nowrap;
+        align-items: flex-start;
     }
     .main{
         width: 500px;
+        margin: 0px 0px;
     } 
     .productCard{
         width: 232px;
@@ -366,3 +419,4 @@ button{
         margin: 20px 1vw;
     }
 }
+

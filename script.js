@@ -54,6 +54,10 @@ function printMainCat(){
     $(".cartLink").click(function(){
         showCart();
     });
+    $(".mobileMenuButton").click(function(){
+        $(".mainMenu").toggle();
+        $(".subMenu").toggle();
+    });
 
     printSubCat = function(i){      
         $(".subMenuList").html("");    
