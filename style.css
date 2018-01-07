@@ -5,6 +5,7 @@ body{
     background-color: #FFFFFF;
     font-family: 'Quicksand', sans-serif;
     
+    
 }
 a:link, a:visited {
     text-decoration: none;
@@ -183,6 +184,11 @@ button{
     width: 200px;
     margin: 20px 0px;
 }
+.cartButton:hover{
+    background-color: #8c8b8b;
+    color: white;
+    border-color: black;
+}
 .cartTitle{
     margin-left: 15px;
     width: 1117px;
@@ -191,7 +197,7 @@ button{
     justify-content: space-between;
 }
 .cartTitle h3{
-    width: 202px;
+    width: 205px;
 }
 .cartList{
     width: 560px;
@@ -217,10 +223,13 @@ button{
     color: black;
 }
 .footer{
-    width: 100vw;
+    width: 1200px;
     height: 150px;
-    background-color: lightslategray;
+    display:flex;
+    align-content: flex-end;
+    justify-content: flex-end;
 }
+
 
 
 @media (max-width: 1250px) {
@@ -303,13 +312,12 @@ button{
        flex-flow: column nowrap;
        align-items: flex-start;
     }
-    
-.subMenu{
-    height: 100%;
-    width: 40vw;
-    flex-flow: column nowrap;
-    display: none;
-}
+    .subMenu{
+        height: 100%;
+        width: 40vw;
+        flex-flow: column nowrap;
+        display: none;
+    }
     .subMenuList{  
         width: 40vw;
         flex-flow: column nowrap;
