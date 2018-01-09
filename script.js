@@ -95,7 +95,7 @@ function printMainCat(){
             var productName = "<h2>" + productList[index].prodName  + "</h2>";
             var productPrice = "<p>" + productList[index].prodPrice + " kr</p>";
             var productImage = "<img class='productImg' alt='" + productList[index].prodName + "' src='img/products/" + productList[index].prodImg + "'>";
-            var productDescription = "<p>" + productList[index].prodDesc + "</p>";
+            var productDescription = "<p class='productDescription'>" + productList[index].prodDesc + "</p>";
             var cartButton = "<button class='cartButton' onclick='addToCart(" + productList[index].id + ")'>Lägg i kundvagn</button>";
 
             var productTitle = "<div class='productTitle'>" + productName + "<hr class='productHR'>" + productPrice + "</div>"
@@ -154,7 +154,9 @@ function printMainCat(){
         $(".cartList").append(cartListProdName + cartListProdPrice + cartListRemove);
 
         var checkOutButton = "<button class='cartButton' onclick='checkOut()'>Gå till kassan</button>";
-        $(".cartSummary").append(checkOutButton);
+        var showLoginButton = "<button class='cartButton' onclick='showLogin()'>Logga in</button>";
+        var showCreateAccountButton = "<button class='cartButton' onclick='showCreateAccount()'>Skapa konto</button>";
+        $(".cartSummary").append(checkOutButton + showLoginButton + showCreateAccountButton);
 
     }
 
@@ -167,9 +169,42 @@ function printMainCat(){
         }
     }
 
-        
+    checkOut = function(){
+        $(".main").html("<div class='cartTitle'><h2>Logga in eller skapa konto</h2></div><hr class='productHR'>");
+        $(".main").append("<div class='checkOutLeft'></div><div class='checkOutLabels'></div><div class='checkOutInputs'></div>");
 
+        var showLoginButton = "<button class='cartButton' onclick='showLogin()'>Logga in</button>";
+        var showCreateAccountButton = "<button class='cartButton' onclick='showCreateAccount()'>Skapa konto</button>";
+        $(".checkOutLeft").append(showLoginButton + showCreateAccountButton);
+    }
+    showLogin = function(){
+        var loginBox = "<div class='loginBox'></div>"
+        var loginBoxTitle = "<div class='loginBoxTitle'><h2>Logga in</h2></div>"
+        var loginBoxLabels = "<div class='loginBoxLabels'><label for='mailaddress'>E-postadress: </label><label for='password'>Lösernord: </label></div>";
+        var loginBoxInputs = "<div class='loginBoxInputs'><input name='mailaddress' id='mailaddress' type='text'><input name='password' id='password' type='password'></div>";
+        var LoginButton = "<button class='cartButton' onclick='Login()'>Logga in</button>";
+                
+        $(".main").append(loginBox);
+        $(".loginBox").html(loginBoxTitle + loginBoxLabels + loginBoxInputs + LoginButton);
+        $(".overlay").show();           
+    }
 
+    showCreateAccount = function(){
+        var createAccountBox = "<div class='loginBox'></div>"
+        var createAccountTitle = "<div class='loginBoxTitle'><h2>Skapa konto</h2></div>"
+        var createAccountLabels = "<div class='loginBoxLabels'><label for='mailaddress'>E-postadress: </label></br><label for='name'>Namn: </label></br><label for='address'>Adress: </label></br><label for='postal'>Postnummer: </label></br><label for='phone'>Telefonnummer: </label></br><label for='password'>Lösenord: </label></div>";
+        var createAccountInputs = "<div class='loginBoxInputs'><input name='mailaddress' id='mailaddress' type='text'><input name='name' id='name' type='text'><input name='address' id='address' type='text'><input name='postal' id='postal' type='number'><input name='phone' id='phone' type='number'><input name='password' id='password' type='password'></div>";
+        var createAccountButton = "<button class='cartButton' onclick='createAccount()'>Skapa Konto</button>";
+                
+        $(".main").append(createAccountBox);
+        $(".loginBox").html(createAccountTitle + createAccountLabels + createAccountInputs + createAccountButton);
+        $(".overlay").show();           
+    }
+
+    $(".overlay").click(function(){
+        $(".overlay").hide();
+        $(".loginBox").hide();
+    });
 
 
 
