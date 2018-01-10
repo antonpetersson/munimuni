@@ -82,6 +82,9 @@ input[type=number]::-webkit-outer-spin-button {
     background-size: 64px;
     margin-bottom: 20px;
 }
+.loggedInName{
+    margin-bottom: 37px;
+}
 .cartCounter{
     font-weight: 600;
     font-size: 18px;
@@ -236,29 +239,7 @@ input[type=number]::-webkit-outer-spin-button {
 .cartListRemove a:hover{
     color: black;
 }
-.checkOutLeft{
-    width: 260px;
-    margin-right: 250px;
-    margin-left: 20px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between; 
-    align-items: flex-start;
-    align-content: flex-start;
-}
-.checkOutLabels{
-    width: 140px;
-    margin-top: 20px;
-    margin-right: 10px;
-    font-size: 18px;
-    
-}
-.checkOutInputs{
-    width: 150px;
-    margin-top: 20px;
-    
 
-}
 .footer{
     width: 1200px;
     height: 150px;
@@ -266,7 +247,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-content: flex-end;
     justify-content: flex-end;
 }
-.loginBox{
+.popupBox{
     background-color: white;
     width: 400px;
     position: absolute;
@@ -285,19 +266,19 @@ input[type=number]::-webkit-outer-spin-button {
     z-index: 3;
     
 }
-.loginBoxTitle{
+.popupBoxTitle{
     width: 380px;
     height: 50px;
 
 }
-.loginBoxTitle h2{
+.popupBoxTitle h2{
     margin: 0px;
 }
-.loginBoxLabels{
+.popupBoxLabels{
     width: 190px;   
     line-height: 25px;
 }
-.loginBoxInputs{
+.popupBoxInputs{
     width: 190px;   
 }
 .overlay {
@@ -311,6 +292,7 @@ input[type=number]::-webkit-outer-spin-button {
     bottom: 0;
     background-color: rgba(0,0,0,0.5); 
     z-index: 2; 
+}
     
 
 

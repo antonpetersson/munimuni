@@ -1,7 +1,25 @@
 $(document).ready(function(){
 var mainCatList;
 var shoppingCart = [];
+var newUser = [];
 
+
+if (localStorage.newUser == null){
+    var json_str = JSON.stringify(newUser);
+    localStorage.newUser = json_str;  
+    }
+    
+    var parseNewUser = JSON.parse(localStorage.newUser);
+            
+            for(i = 0; i < parseNewUser.length; i++){
+                console.log(parseNewUser[i][0]);  
+               
+            }
+
+if (sessionStorage.getItem("userId"))  {
+    $(".loggedInName").html(sessionStorage.getItem("userId"));                                   
+}
+  
 
 fetch("./huvudkategorier.json")
     .then(function(response) {
@@ -38,8 +56,7 @@ function printMainCat(){
     }
     $(".mainMenuList").append("<li><a href='#'>Kontakt</a></li>");
     $(".mainMenuList").append("<li><a href='#'>Information</a></li>");
-    //$(".mainMenuList").append("<li class='cartLink'><a href='#'><div class='cartCounter'></div></a></li>");  
-    
+        
     $(".cartLink").hover(function(){
             $(".cartLink").css("background-image", "url(img/cartHover.png)");
             $(this).css('cursor','pointer');
@@ -153,11 +170,15 @@ function printMainCat(){
         $(".main").append("<div class='cartList'></div><div class='cartSummary'></div>");
         $(".cartList").append(cartListProdName + cartListProdPrice + cartListRemove);
 
-        var checkOutButton = "<button class='cartButton' onclick='checkOut()'>Gå till kassan</button>";
-        var showLoginButton = "<button class='cartButton' onclick='showLogin()'>Logga in</button>";
-        var showCreateAccountButton = "<button class='cartButton' onclick='showCreateAccount()'>Skapa konto</button>";
-        $(".cartSummary").append(checkOutButton + showLoginButton + showCreateAccountButton);
-
+        var checkOutButton = "<button class='cartButton' onclick='checkOut()'>Köp</button>";
+        var showLoginButton = "<button class='cartButton' id='showLoginButton' onclick='showLogin()'>Logga in</button>";
+        var showCreateAccountButton = "<button class='cartButton' id='showCreateAccountButton' onclick='showCreateAccount()'>Skapa konto</button>";
+        $(".cartSummary").append(checkOutButton)  
+        
+        if (!sessionStorage.getItem("userId"))  {
+            $(".cartSummary").append(showLoginButton + showCreateAccountButton);                        
+        }
+      
     }
 
     delCartItem = function(i){
@@ -170,41 +191,89 @@ function printMainCat(){
     }
 
     checkOut = function(){
-        $(".main").html("<div class='cartTitle'><h2>Logga in eller skapa konto</h2></div><hr class='productHR'>");
-        $(".main").append("<div class='checkOutLeft'></div><div class='checkOutLabels'></div><div class='checkOutInputs'></div>");
+        var json_str = JSON.stringify(shoppingCart);
+        localStorage.shoppingCart = json_str;  
 
-        var showLoginButton = "<button class='cartButton' onclick='showLogin()'>Logga in</button>";
-        var showCreateAccountButton = "<button class='cartButton' onclick='showCreateAccount()'>Skapa konto</button>";
-        $(".checkOutLeft").append(showLoginButton + showCreateAccountButton);
+        $(".main").html("<div class='cartTitle'><h2>Tack för ditt köp!</h2></div><hr class='productHR'>");
+        console.log(localStorage.shoppingCart);
     }
+
     showLogin = function(){
-        var loginBox = "<div class='loginBox'></div>"
-        var loginBoxTitle = "<div class='loginBoxTitle'><h2>Logga in</h2></div>"
-        var loginBoxLabels = "<div class='loginBoxLabels'><label for='mailaddress'>E-postadress: </label><label for='password'>Lösernord: </label></div>";
-        var loginBoxInputs = "<div class='loginBoxInputs'><input name='mailaddress' id='mailaddress' type='text'><input name='password' id='password' type='password'></div>";
+        var loginBox = "<div class='popupBox'></div>"
+        var loginBoxTitle = "<div class='popupBoxTitle'><h2>Logga in</h2></div>"
+        var loginBoxLabels = "<div class='popupBoxLabels'><label for='loginMail'>E-postadress: </label><label for='loginPassword'>Lösernord: </label></div>";
+        var loginBoxInputs = "<div class='popupBoxInputs'><input name='loginMail' id='loginMail' type='text'><input name='loginPassword' id='loginPassword' type='password'></div>";
         var LoginButton = "<button class='cartButton' onclick='Login()'>Logga in</button>";
                 
         $(".main").append(loginBox);
-        $(".loginBox").html(loginBoxTitle + loginBoxLabels + loginBoxInputs + LoginButton);
-        $(".overlay").show();           
+        $(".popupBox").html(loginBoxTitle + loginBoxLabels + loginBoxInputs + LoginButton);
+        $(".overlay").show();         
+        
+        Login = function(){
+            var parseNewUser = JSON.parse(localStorage.newUser);
+            
+            for(i = 0; i < parseNewUser.length; i++){
+                if (loginMail.value == parseNewUser[i][0] && loginPassword.value == parseNewUser[i][5]){
+                    $(".popupBoxTitle").html("<h2>Logga in </h2> Välkommen " + parseNewUser[i][1]);
+
+                    sessionStorage.setItem("userId", parseNewUser[i][1]);
+                    console.log(sessionStorage.getItem("userId"));
+                    $(".loggedInName").html(sessionStorage.getItem("userId"));  
+                    $("#showLoginButton").hide();
+                    $("#showCreateAccountButton").hide();
+                } 
+                else{
+                    $(".popupBoxTitle").html("<h2>Logga in</h2> Något gick fel, försök igen");
+                }
+                var json_str = JSON.stringify(parseNewUser);
+                localStorage.newUser = json_str;
+            }
+        }
     }
 
     showCreateAccount = function(){
-        var createAccountBox = "<div class='loginBox'></div>"
-        var createAccountTitle = "<div class='loginBoxTitle'><h2>Skapa konto</h2></div>"
-        var createAccountLabels = "<div class='loginBoxLabels'><label for='mailaddress'>E-postadress: </label></br><label for='name'>Namn: </label></br><label for='address'>Adress: </label></br><label for='postal'>Postnummer: </label></br><label for='phone'>Telefonnummer: </label></br><label for='password'>Lösenord: </label></div>";
-        var createAccountInputs = "<div class='loginBoxInputs'><input name='mailaddress' id='mailaddress' type='text'><input name='name' id='name' type='text'><input name='address' id='address' type='text'><input name='postal' id='postal' type='number'><input name='phone' id='phone' type='number'><input name='password' id='password' type='password'></div>";
+        var createAccountBox = "<div class='popupBox'></div>"
+        var createAccountTitle = "<div class='popupBoxTitle'><h2>Skapa konto </h2></div>"
+        var createAccountLabels = "<div class='popupBoxLabels'><label for='mail'>E-postadress: </label></br><label for='name'>Namn: </label></br><label for='address'>Adress: </label></br><label for='postal'>Postnummer: </label></br><label for='phone'>Telefonnummer: </label></br><label for='password'>Lösenord: </label></div>";
+        var createAccountInputs = "<div class='popupBoxInputs'><input name='mail' id='mail' type='text'><input name='fullName' id='fullName' type='text'><input name='address' id='address' type='text'><input name='postal' id='postal' type='number'><input name='phone' id='phone' type='number'><input name='password' id='password' type='password'></div>";
         var createAccountButton = "<button class='cartButton' onclick='createAccount()'>Skapa Konto</button>";
                 
         $(".main").append(createAccountBox);
-        $(".loginBox").html(createAccountTitle + createAccountLabels + createAccountInputs + createAccountButton);
-        $(".overlay").show();           
+        $(".popupBox").html(createAccountTitle + createAccountLabels + createAccountInputs + createAccountButton);
+        $(".overlay").show();          
+        
+        createAccount = function(){
+            if (mail.value.length == 0 || fullName.value.length == 0 || address.value.length == 0 || postal.value.length == 0 || phone.value.length == 0){
+               $(".popupBoxTitle").html("<h2>Skapa konto </h2> Något blev fel, försök igen");
+            }
+            else{
+                var parseNewUser = JSON.parse(localStorage.newUser);
+
+                parseNewUser.push([mail.value, fullName.value, address.value, postal.value, phone.value, password.value]);
+                    
+                var json_str = JSON.stringify(parseNewUser);
+                localStorage.newUser = json_str;  
+
+                $(".popupBoxTitle").html("<h2>Skapa konto </h2> Kontot är skapat");
+            }
+             
+           
+        }
     }
 
     $(".overlay").click(function(){
         $(".overlay").hide();
-        $(".loginBox").hide();
+        $(".popupBox").hide();
+
+        
+    
+        
+
+
     });
+    
+
+
 
 
 
