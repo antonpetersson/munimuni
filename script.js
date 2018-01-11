@@ -4,17 +4,32 @@ var shoppingCart = [];
 var newUser = [];
 
 
+//kollar om sessionstorage finns för shoppingcart, annars skapas det.
+if (sessionStorage.shoppingCart == null){
+    var json_str = JSON.stringify(shoppingCart);
+    sessionStorage.shoppingCart = json_str; 
+}
+var parseCart = JSON.parse(sessionStorage.shoppingCart);
+
+//kollar om något redan ligger i carten, isåfall visa hur många
+if(parseCart.length != 0){
+    $(".cartLink").css("background-image", "url(img/cartFull.png)");
+    $(".cartCounter").html(parseCart.length);
+    var json_str = JSON.stringify(parseCart);
+    sessionStorage.shoppingCart = json_str; 
+    }
+
+//kollar om localstorage finns för user, annars skapas det.
 if (localStorage.newUser == null){
     var json_str = JSON.stringify(newUser);
     localStorage.newUser = json_str;  
     }
-    
-    var parseNewUser = JSON.parse(localStorage.newUser);
+var parseNewUser = JSON.parse(localStorage.newUser);
             
-            for(i = 0; i < parseNewUser.length; i++){
-                console.log(parseNewUser[i][0]);  
-               
-            }
+for(i = 0; i < parseNewUser.length; i++){
+    console.log(parseNewUser[i][0]);  
+    
+}
 
 if (sessionStorage.getItem("userId"))  {
     $(".loggedInName").html(sessionStorage.getItem("userId"));                                   
@@ -58,15 +73,19 @@ function printMainCat(){
     $(".mainMenuList").append("<li><a href='#'>Information</a></li>");
         
     $(".cartLink").hover(function(){
-            $(".cartLink").css("background-image", "url(img/cartHover.png)");
-            $(this).css('cursor','pointer');
+        $(".cartLink").css("background-image", "url(img/cartHover.png)");
+        $(this).css('cursor','pointer');
     }, function() {
+        var parseCart = JSON.parse(sessionStorage.shoppingCart);
+        
         if (
-            shoppingCart.length != 0){$(".cartLink").css("background-image", "url(img/cartFull.png)");
+            parseCart.length != 0){$(".cartLink").css("background-image", "url(img/cartFull.png)");
         }
         else{
             $(".cartLink").css("background-image", "url(img/cart.png)");
         }  
+        var json_str = JSON.stringify(parseCart);
+        sessionStorage.shoppingCart = json_str
     });
     $(".cartLink").click(function(){
         showCart();
@@ -128,38 +147,43 @@ function printMainCat(){
         var productName = productList[i-1].prodName
         var productPrice = productList[i-1].prodPrice
         
+        var parseCart = JSON.parse(sessionStorage.shoppingCart);
 
-        shoppingCart.push(productList[i-1]);
-        $(".cartCounter").html(shoppingCart.length);
+        parseCart.push(productList[i-1]);
+
+        $(".cartCounter").html(parseCart.length);
         $(".cartLink").css("background-image", "url(img/cartFull.png)");
+
+        var json_str = JSON.stringify(parseCart);
+        sessionStorage.shoppingCart = json_str; 
+
     }
 
     showCart = function(){
         $(".main").html("<div class='cartTitle'><h2>Kundvagn</h2></div><hr class='productHR'>");
 
+        var parseCart = JSON.parse(sessionStorage.shoppingCart);
+
         var priceTotal = 55;
-        for(var i = 0; i < shoppingCart.length; i++) {
-            priceTotal += shoppingCart[i].prodPrice;
+        for(var i = 0; i < parseCart.length; i++) {
+            priceTotal += parseCart[i].prodPrice;
         }
         $(".cartTitle").append("<h3>Totalpris: " + priceTotal + " kr</h3>");
 
 
-
-        var json_str = JSON.stringify(shoppingCart);
-        localStorage.shoppingCart = json_str; 
-        
-        var loopCart = JSON.parse(localStorage.shoppingCart);
-
+      
         
         var cartListProdName = "<ul class='cartListProdName'>";
         var cartListProdPrice = "<ul>";
         var cartListRemove = "<ul class='cartListRemove'>";
 
-        for(var i = 0; i < loopCart.length; i++){
-            cartListProdName += "<li>" + loopCart[i].prodName + "</li>";
-            cartListProdPrice += "<li>" + loopCart[i].prodPrice + " kr</li>";
+        for(var i = 0; i < parseCart.length; i++){
+            cartListProdName += "<li>" + parseCart[i].prodName + "</li>";
+            cartListProdPrice += "<li>" + parseCart[i].prodPrice + " kr</li>";
             cartListRemove += "<li><a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a></li>";
         }
+        var json_str = JSON.stringify(parseCart);
+        sessionStorage.shoppingCart = json_str; 
 
         cartListProdName += "<li>Frakt</li></ul>";
         cartListProdPrice += "<li>55 kr</li></ul>";
@@ -180,22 +204,29 @@ function printMainCat(){
         }
       
     }
-
     delCartItem = function(i){
-        shoppingCart.splice(i, 1);
+        var parseCart = JSON.parse(sessionStorage.shoppingCart);
+
+        parseCart.splice(i, 1);
+
+        var json_str = JSON.stringify(parseCart);
+        sessionStorage.shoppingCart = json_str; 
+
         showCart();
-        $(".cartCounter").html(shoppingCart.length);
-        if (shoppingCart.length <= 0){
+        $(".cartCounter").html(parseCart.length);
+        if (parseCart.length <= 0){
             $(".cartLink").css("background-image", "url(img/cart.png)");
         }
+        
+
     }
 
     checkOut = function(){
-        var json_str = JSON.stringify(shoppingCart);
-        localStorage.shoppingCart = json_str;  
+        //var json_str = JSON.stringify(shoppingCart);
+        //sessionStorage.shoppingCart = json_str;  
 
         $(".main").html("<div class='cartTitle'><h2>Tack för ditt köp!</h2></div><hr class='productHR'>");
-        console.log(localStorage.shoppingCart);
+        console.log(sessionStorage.shoppingCart);
     }
 
     showLogin = function(){
