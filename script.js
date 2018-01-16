@@ -33,7 +33,7 @@ if (localStorage.subscribers == null){
     var json_str = JSON.stringify(subscribers);
     localStorage.subscribers = json_str;  
     }
-var parseSubscribers = JSON.parse(localStorage.subscribers);
+
 
 if (sessionStorage.getItem("userName"))  {
     $(".loggedInName").html(sessionStorage.getItem("userName"));       
@@ -297,7 +297,7 @@ function printMainCat(){
                     $("#showCreateAccountButton").hide();
                 } 
                 else{
-                    $(".popupBoxTitle").html("<h2>Logga in</h2> Något");
+                    $(".popupBoxTitle").html("<h2>Logga in</h2> Något blev fel, försök igen");
                 }
                 var json_str = JSON.stringify(parseNewUser);
                 localStorage.newUser = json_str;
@@ -311,11 +311,11 @@ function printMainCat(){
     showCreateAccount = function(){
         var createAccountBox = "<div class='popupBox'></div>"
         var createAccountTitle = "<div class='popupBoxTitle'><h2>Skapa konto </h2></div>"
-        var createAccountLabels = "<div class='popupBoxLabels'><label for='mail'>E-postadress: </label></br><label for='name'>Namn: </label></br><label for='address'>Adress: </label></br><label for='postal'>Postnummer: </label></br><label for='phone'>Telefonnummer: </label></br><label for='password'>Lösenord: </label></div>";
+        var createAccountLabels = "<div class='popupBoxLabels'><label for='mail'>E-postadress: </label></br><label for='fullName'>Namn: </label></br><label for='address'>Adress: </label></br><label for='postal'>Postnummer: </label></br><label for='phone'>Telefonnummer: </label></br><label for='password'>Lösenord: </label></div>";
         var createAccountInputs = "<div class='popupBoxInputs'><input name='mail' id='mail' type='text'><input name='fullName' id='fullName' type='text'><input name='address' id='address' type='text'><input name='postal' id='postal' type='number'><input name='phone' id='phone' type='number'><input name='password' id='password' type='password'></div>";
         var newsSubscribe ="<div class='newsSubscribe'><input type='checkbox' checked='checked' id='subscribeNews' name='subscribe'> <label for='subscribeNews'>Jag vill ha nyhetsbrev</label></div>"
         var createAccountButton = "<button class='cartButton' onclick='createAccount()'>Skapa Konto</button>";
-                
+        $(".popupBox").remove();
         $(".main").append(createAccountBox);
         $(".popupBox").html(createAccountTitle + createAccountLabels + createAccountInputs + newsSubscribe + createAccountButton);
         $(".overlay").show();          
@@ -331,10 +331,12 @@ function printMainCat(){
 
                 //Kolla om kunden vill ha nyhetsbrev
                 if(subscribeNews.checked){
+                    var parseSubscribers = JSON.parse(localStorage.subscribers);
                     parseSubscribers.push(mail.value);
+                    var json_str = JSON.stringify(parseSubscribers);
+                    localStorage.subscribers = json_str;
                 }
-                var json_str = JSON.stringify(parseSubscribers);
-                localStorage.subscribers = json_str;
+                
 
                 var json_str = JSON.stringify(parseNewUser);
                 localStorage.newUser = json_str;
