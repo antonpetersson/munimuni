@@ -55,6 +55,19 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
   
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #8c8b8b;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #8c8b8b;
+}
 .content{
     display: flex;
     flex-flow: row wrap;
@@ -243,9 +256,6 @@ input[type=number]::-webkit-outer-spin-button {
 .footer{
     width: 1200px;
     height: 150px;
-    display: flex;
-    align-content: flex-end;
-    justify-content: flex-end;
 }
 .popupBox{
     background-color: white;
@@ -265,6 +275,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-content: center;
     z-index: 3;
     
+    
 }
 .popupBoxTitle{
     width: 380px;
@@ -281,6 +292,11 @@ input[type=number]::-webkit-outer-spin-button {
 .popupBoxInputs{
     width: 190px;   
 }
+.newsSubscribe{
+    width: 380px;
+    margin-top: 20px;
+    text-align: center;
+}
 .overlay {
     position: fixed;
     display: none;
@@ -292,6 +308,20 @@ input[type=number]::-webkit-outer-spin-button {
     bottom: 0;
     background-color: rgba(0,0,0,0.5); 
     z-index: 2; 
+}
+
+/* ADMINSIDAN */
+.adminMenuList{  
+    width: 1200px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.adminMain{
+    margin: 50px 0px;
+    width: 1200px;
+    min-height: 60vh;
 }
     
 
@@ -490,6 +520,24 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .cartButton{
         margin: 20px 1vw;
+    }
+    .loggedInName{
+        display: none;
+    }
+    .popupBox{
+        width: 90vw;
+    }
+    .popupBoxTitle{
+        width: 100%;
+    }
+    .popupBoxLabels{
+        width: 50%;   
+    }
+    .popupBoxInputs{
+        width: 50%;   
+    }
+    .newsSubscribe{
+        width: 100%;
     }
 }
 
