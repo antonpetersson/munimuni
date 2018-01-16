@@ -1,6 +1,8 @@
 # munimuni
 http://antonpetersson.wieg17.se/muni-muni/
 
-röd: ff2b06ff
-ljus-grå: 8c8b8bff
-mörk-grå: 4d4d4dff
+rÃ¶d: ff2b06
+
+ljus-grÃ¥: 8c8b8b
+
+mÃ¶rk-grÃ¥: 4d4d4d
