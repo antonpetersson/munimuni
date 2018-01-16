@@ -3,9 +3,7 @@ body{
     padding: 0;
     overflow-x: hidden;
     background-color: #FFFFFF;
-    font-family: 'Quicksand', sans-serif;
-    
-    
+    font-family: 'Quicksand', sans-serif;   
 }
 a:link, a:visited {
     text-decoration: none;
@@ -60,13 +58,13 @@ table {
     width: 100%;
 }
 td, th {
-    border: 1px solid #8c8b8b;
+    border: 1px solid #acacac;
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #8c8b8b;
+    background-color: #acacac;
 }
 .content{
     display: flex;
