@@ -276,7 +276,8 @@ function printMainCat(){
         var loginBoxLabels = "<div class='popupBoxLabels'><label for='loginMail'>E-postadress: </label><label for='loginPassword'>Lösenord: </label></div>";
         var loginBoxInputs = "<div class='popupBoxInputs'><input name='loginMail' id='loginMail' type='text'><input name='loginPassword' id='loginPassword' type='password'></div>";
         var LoginButton = "<button class='cartButton' onclick='Login()'>Logga in</button>";
-                
+        
+        $(".popupBox").remove();
         $(".main").append(loginBox);
         $(".popupBox").html(loginBoxTitle + loginBoxLabels + loginBoxInputs + LoginButton);
         $(".overlay").show();         
